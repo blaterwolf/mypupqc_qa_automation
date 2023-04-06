@@ -1,0 +1,20 @@
+{
+    "name": "mypupqc_qa_automation_js",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "jest"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "jest": "^29.5.0",
+        "jest-html-reporter": "^3.7.1",
+        "selenium-webdriver": "^4.8.2"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3"
+    }
+}
