@@ -13,7 +13,7 @@ describe('Login to Student', () => {
         await driver.quit()
     })
 
-    test('should successfully login', async () => {
+    test('should successfully login to student portal', async () => {
         await loginToStudent(driver)
 
         // Check if the login was successful by looking for an element that should be present after logging in
@@ -38,7 +38,7 @@ describe('Login to PUP Staff', () => {
         await driver.quit()
     })
 
-    test('should successfully login', async () => {
+    test('should successfully login to staff portal', async () => {
         await loginToStaff(driver)
 
         // Check if the login was successful by looking for an element that should be present after logging in
@@ -63,7 +63,7 @@ describe('Login to Super Admin', () => {
         await driver.quit()
     })
 
-    test('should successfully login', async () => {
+    test('should successfully login to admin portal', async () => {
         await logintoAdmin(driver)
 
         // Check if the login was successful by looking for an element that should be present after logging in
