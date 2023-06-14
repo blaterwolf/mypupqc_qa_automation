@@ -1,6 +1,6 @@
 # myPUPQC QA Automation Testing with Jest and Selenium
 
-This project demonstrates QA Automtion Testing for myPUPQC using Selenium WebDriver and Jest for testing.
+This project demonstrates QA Automation Testing for myPUPQC using Selenium WebDriver and Jest for testing.
 
 ## Project Overview
 
@@ -31,6 +31,7 @@ If you want to run a specific Test Suite (i.e., a specific test file), you will 
 
 Assuming that there are multiple directories in the `tests` folder, you could run a batch of Test Suites by also running `npm test tests/[folderName]` if all your test files are there.
 
+**Alternative**: Install [IntelliJ (Ultimate Edition)](https://www.jetbrains.com/idea/download/#section=windows) to specifically run test cases. Very convinient.
 ## Reports
 
 After running the tests, you can view the test report by opening the HTML file in the `reports` directory. This is indicated in the `jest.config.js` let me know if you want to change something here that is beneficial to the project.

@@ -29,7 +29,7 @@ describe('View and Update Patient Information', () => {
     test('should successfully navigate to patient information page', async () => {
         // click health information on the sidebar
         const healthInformationXPath =
-            '/html/body/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/div[1]/div[2]/div/div/div/li[12]/a'
+            '/html/body/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/div[1]/div[2]/div/div/div/li[16]/a'
         const healthInformation = await driver.wait(
             until.elementLocated(By.xpath(healthInformationXPath)),
             3000
@@ -38,7 +38,7 @@ describe('View and Update Patient Information', () => {
 
         // click patient information
         const patientInformationXPath =
-            '/html/body/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/div[1]/div[2]/div/div/div/li[12]/div/ul/li[1]/a'
+            '/html/body/div/div[1]/div[2]/div[1]/div[2]/div/div/div/div/ul/div[1]/div[2]/div/div/div/li[16]/div/ul/li[1]/a'
         const patientInformation = await driver.wait(
             until.elementLocated(By.xpath(patientInformationXPath)),
             3000
