@@ -5,11 +5,11 @@ const firefoxOptions = require('../helpers/firefoxOptions')
 describe('Login to Student', () => {
     let driver
 
-    beforeEach(async () => {
+    beforeAll(async () => {
         driver = new Builder().forBrowser('firefox').setFirefoxOptions(firefoxOptions).build()
     })
 
-    afterEach(async () => {
+    afterAll(async () => {
         await driver.quit()
     })
 
@@ -30,11 +30,11 @@ describe('Login to Student', () => {
 describe('Login to PUP Staff', () => {
     let driver
 
-    beforeEach(async () => {
+    beforeAll(async () => {
         driver = new Builder().forBrowser('firefox').setFirefoxOptions(firefoxOptions).build()
     })
 
-    afterEach(async () => {
+    afterAll(async () => {
         await driver.quit()
     })
 
@@ -55,11 +55,11 @@ describe('Login to PUP Staff', () => {
 describe('Login to Super Admin', () => {
     let driver
 
-    beforeEach(async () => {
+    beforeAll(async () => {
         driver = new Builder().forBrowser('firefox').setFirefoxOptions(firefoxOptions).build()
     })
 
-    afterEach(async () => {
+    afterAll(async () => {
         await driver.quit()
     })
 
