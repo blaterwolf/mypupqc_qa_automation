@@ -41,6 +41,63 @@ async function loginToStaff(driver) {
     await driver.sleep(3000)
 }
 
+async function loginToMedicalStaff(driver) {
+    await driver.get(process.env.ENTRY_POINT)
+    const loginXPath = '/html/body/div[2]/nav/div/div/div/a'
+    await driver.findElement(By.xpath(loginXPath)).click()
+
+    await driver.sleep(2000)
+
+    const usernoXPath = '//*[@id="user_no"]'
+    const passwordXPath = '//*[@id="password"]'
+    const signinXPath = '/html/body/div/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[4]/button'
+
+    await driver.findElement(By.xpath(usernoXPath)).sendKeys(process.env.STAFF_MEDICAL)
+    await driver.findElement(By.xpath(passwordXPath)).sendKeys(process.env.PASSWORD_STAFF)
+    await driver.findElement(By.xpath(signinXPath)).click()
+
+    console.log('Logging to Medical Staff...')
+    await driver.sleep(3000)
+}
+
+async function loginToDentalStaff(driver) {
+    await driver.get(process.env.ENTRY_POINT)
+    const loginXPath = '/html/body/div[2]/nav/div/div/div/a'
+    await driver.findElement(By.xpath(loginXPath)).click()
+
+    await driver.sleep(2000)
+
+    const usernoXPath = '//*[@id="user_no"]'
+    const passwordXPath = '//*[@id="password"]'
+    const signinXPath = '/html/body/div/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[4]/button'
+
+    await driver.findElement(By.xpath(usernoXPath)).sendKeys(process.env.STAFF_DENTAL)
+    await driver.findElement(By.xpath(passwordXPath)).sendKeys(process.env.PASSWORD_STAFF)
+    await driver.findElement(By.xpath(signinXPath)).click()
+
+    console.log('Logging to Dental Staff...')
+    await driver.sleep(3000)
+}
+
+async function loginToGuidanceStaff(driver) {
+    await driver.get(process.env.ENTRY_POINT)
+    const loginXPath = '/html/body/div[2]/nav/div/div/div/a'
+    await driver.findElement(By.xpath(loginXPath)).click()
+
+    await driver.sleep(2000)
+
+    const usernoXPath = '//*[@id="user_no"]'
+    const passwordXPath = '//*[@id="password"]'
+    const signinXPath = '/html/body/div/div[2]/div/div[2]/div/div[1]/div/div[2]/form/div[4]/button'
+
+    await driver.findElement(By.xpath(usernoXPath)).sendKeys(process.env.STAFF_GUIDANCE)
+    await driver.findElement(By.xpath(passwordXPath)).sendKeys(process.env.PASSWORD_STAFF)
+    await driver.findElement(By.xpath(signinXPath)).click()
+
+    console.log('Logging to Guidance Staff...')
+    await driver.sleep(3000)
+}
+
 async function logintoAdmin(driver) {
     await driver.get(process.env.ENTRY_POINT)
     const loginXPath = '/html/body/div[2]/nav/div/div/div/a'
@@ -64,4 +121,7 @@ module.exports = {
     loginToStudent,
     loginToStaff,
     logintoAdmin,
+    loginToMedicalStaff,
+    loginToDentalStaff,
+    loginToGuidanceStaff,
 }
