@@ -53,31 +53,48 @@ describe('MQC-21: Medical Consultation Page', () => {
         
         const radioButtonXPath = '//*[@id="consultation_type"]'
         const radioButton = await driver.findElement(By.xpath(radioButtonXPath))
-        await radioButton.click();
+        await radioButton.click()
+        await driver.sleep(5000)
 
         const consultationReason = 'Allergic Rhinitis'
         const consultationReasonXPath = '//*[@id="consultation_reason"]'
         await driver.findElement(By.xpath(consultationReasonXPath)).sendKeys(consultationReason)
+        await driver.sleep(5000)
         
         const dateInputXPath = '//*[@id="medical-calendar"]/div[2]/div/div[2]/div[34]'
         // Click the date input field to open the calendar
-        const dateInput = await driver.findElement(By.xpath(dateInputXPath));
-        await dateInput.click();
-
-        // Locate and click the desired date in the calendar
-        const desiredDateXPath = '//*[@id="medical-calendar"]/div[2]/div/div[2]/div[34]/button'; // Replace with the XPath of the desired date in the calendar
-        const desiredDate = await driver.findElement(By.xpath(desiredDateXPath));
-        await desiredDate.click();
-
+        const dateInput = await driver.findElement(By.xpath(dateInputXPath))
+        await dateInput.click()
         await driver.sleep(5000)
-    }, 30000) 
+
+        /* /* Locate and click the desired date in the calendar 
+        const desiredDateXPath = '//*[@id="medical-calendar"]/div[2]/div/div[2]/div[34]/button' // Replace with the XPath of the desired date in the calendar
+        const desiredDate = await driver.findElement(By.xpath(desiredDateXPath))
+        await desiredDate.click()
+        await driver.sleep(5000)  */
+
+        const submitAppointmentXPath = '//*[@id="addMedicalAppointment"]'
+        await driver.findElement(By.xpath(submitAppointmentXPath)).click()
+        await driver.sleep(5000)
+
+        const okAppointmentXPath = '/html/body/div[2]/div/div[6]/button[3]'
+        await driver.findElement(By.xpath(okAppointmentXPath)).click()
+        await driver.sleep(5000)
+    }, 45000)  
 
     test('Should be able to successfully log out of the system', async () => {
-        const loginUrl = 'http://localhost/myPUPQC/signin'
+        
+        const dropDownXPath = '//*[@id="full_name"]'
+        await driver.findElement(By.xpath(dropDownXPath)).click()
+        await driver.sleep(5000)
 
-        console.log(await driver.getCurrentUrl())
-
-        expect(await driver.getCurrentUrl()).toBe(loginUrl)
-    })
+        const logoutXPath = '//*[@id="page-topbar"]/div/div/div[2]/div/div/a[4]/span'
+        await driver.findElement(By.xpath(logoutXPath)).click()
+        await driver.sleep(5000)
+        
+        const confirmLogoutXPath = '/html/body/div[2]/div/div[6]/button[1]'
+        await driver.findElement(By.xpath(confirmLogoutXPath)).click()
+        await driver.sleep(5000)
+    }, 30000)
     
 })

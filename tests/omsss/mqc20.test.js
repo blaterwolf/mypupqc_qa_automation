@@ -97,10 +97,10 @@ describe('MQC-20: Health History Page', () => {
         const checkboxXPath = '//*[@id="privacy"]';
         const checkbox = await driver.findElement(By.xpath(checkboxXPath));
 
-        await driver.executeScript("arguments[0].scrollIntoView(true);", checkbox);
+        await driver.executeScript("arguments[0].scrollIntoView(true);", checkbox)
         await driver.sleep(5000)
 
-        await checkbox.click();
+        await checkbox.click()
         await driver.sleep(5000)
     }, 30000)
     

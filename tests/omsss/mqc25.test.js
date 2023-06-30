@@ -71,7 +71,16 @@ describe('MQC-25: Medical Request Page', () => {
 
     test('Should be able to click view and close in requests and leave a remark', async () => {
         await driver.sleep(5000)
-        await driver.executeScript("arguments[0].scrollIntoView(true);", footer);
+
+        /* scroll to bottom 
+        const elementToScroll = await driver.findElement(By.xpath('//*[@id="approved-datatables_next"]/a'))
+        await driver.executeScript('arguments[0].scrollIntoView();', elementToScroll) */
+        
+        /* next page */
+        const elementToScroll = await driver.findElement(By.xpath('//*[@id="approved-datatables_paginate"]/ul/li[3]/a'))
+        await driver.executeScript('arguments[0].scrollIntoView();', elementToScroll)
+
+        
         const pickUpFormXPath ='//*[@id="readyForPickupRequestForm"]/div[2]/button'
         await driver.findElement(By.xpath(pickUpFormXPath)).click()
 
