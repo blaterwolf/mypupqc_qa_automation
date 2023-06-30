@@ -2,7 +2,7 @@ const { Builder, By, until, WebElement, Button } = require('selenium-webdriver')
 const { loginToStaff } = require('../../home/login')
 const firefoxOptions = require('../../helpers/firefoxOptions')
 
-describe('MQC-25: Medical Request History Page', () => {
+describe('MQC-26: Medical Request History Page', () => {
     let driver
 
     beforeAll(async () => {
