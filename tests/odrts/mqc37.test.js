@@ -112,13 +112,13 @@ test ('Should be able to sort the data in Document Type by clicking the "Documen
 test ('Should be able to view the sub-details of the selected doucument by clicking the view button in the Action column', async () => {
     driver.findElement(By.xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div/div[2]/div/table/tbody/tr[1]/td[3]/div/button[1]')).click()
 },20000)
-test ('Should be able to go to a specific page number by clicking the the selected page number at the buttom', async () => {
+test ('Should be able to go to a specific page number by clicking the the selected page number at the bottom', async () => {
     driver.findElement(By.xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div/div[2]/div/div[4]/ul/li[3]/a')).click()
 },20000)
 test ('Should be able to go to the next page by clicking the "Next" button', async () => {
     driver.findElement(By.xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div/div[2]/div/div[4]/ul/li[5]/a')).click()
 },20000)
-test ('Should be able to go to a specific page number by clicking the the selected page number at the buttom', async () => {
+test ('Should be able to go to a specific page number by clicking the the selected page number at the bottom', async () => {
     driver.findElement(By.xpath('/html/body/div[1]/div[3]/div/div/div[2]/div/div/div[2]/div/div[4]/ul/li[1]/a')).click()
 },20000)
 })
