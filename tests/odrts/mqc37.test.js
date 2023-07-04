@@ -1,7 +1,6 @@
 const { Builder, By, until } = require('selenium-webdriver')
 const { loginToStaff } = require('../../home/login')
 const firefoxOptions = require('../../helpers/firefoxOptions')
-const { titleContains } = require('selenium-webdriver/lib/until')
 
 describe('Login to PUP Staff and Document Page should be functional', () => {
     let driver
