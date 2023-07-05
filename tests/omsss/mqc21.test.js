@@ -7,6 +7,7 @@ describe('MQC-21: Medical Consultation Page', () => {
 
     beforeAll(async () => {
         driver = new Builder().forBrowser('firefox').setFirefoxOptions(firefoxOptions).build()
+        await driver.manage().window().maximize()
     })
 
     afterAll(async () => {
