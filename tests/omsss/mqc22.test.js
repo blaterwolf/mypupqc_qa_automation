@@ -2,7 +2,7 @@ const { Builder, By, until, WebElement } = require('selenium-webdriver')
 const { loginToStudent } = require('../../home/login')
 const firefoxOptions = require('../../helpers/firefoxOptions')
 
-describe('MQC-21: Medical Consultation Page', () => {
+describe('MQC-22: Dental Consultation Page', () => {
     let driver
 
     beforeAll(async () => {
@@ -28,23 +28,21 @@ describe('MQC-21: Medical Consultation Page', () => {
         await driver.sleep(5000)
     }, 30000)
 
-    test('Should load the appointment tab after clicking and see sub tabs of "Medical Consultation", Dental Consultation", and "Guidance Consultation".', async () => {
+    test('A dropdown with options "Medical Consultation", "Dental Consultation", and "Guidance Consultation" is expected', async () => {
         await driver.sleep(5000)
 
         const appointmentSidebarXPath ='//*[@id="navbar-nav"]/div[1]/div[2]/div/div/div/li[17]/a'  
-
         await driver.findElement(By.xpath(appointmentSidebarXPath)).click()
         
         await driver.sleep(5000)
     }, 30000)
 
-    test('Should be able to load the Medical Consultation Page after clicking', async () => {
+    test('Should load the Guidance Consultation at the side of the page', async () => {
         await driver.sleep(5000)
 
-        const medicalConsultationPageXPath =
-            '//*[@id="sidebarAppointment"]/ul/li[1]/a'
-
-        await driver.findElement(By.xpath(medicalConsultationPageXPath)).click()
+        const GuidanceConsultationPageXPath =
+            '//*[@id="sidebarAppointment"]/ul/li[3]/a'
+        await driver.findElement(By.xpath(GuidanceConsultationPageXPath)).click()
 
         await driver.sleep(5000)
     }, 30000)
@@ -57,12 +55,12 @@ describe('MQC-21: Medical Consultation Page', () => {
         await radioButton.click()
         await driver.sleep(5000)
 
-        const consultationReason = 'Allergic Rhinitis'
+        const consultationReason = 'Bullying'
         const consultationReasonXPath = '//*[@id="consultation_reason"]'
         await driver.findElement(By.xpath(consultationReasonXPath)).sendKeys(consultationReason)
         await driver.sleep(5000)
         
-        const dateInputXPath = '//*[@id="medical-calendar"]/div[2]/div/div[2]/div[34]'
+        const dateInputXPath = '//*[@id="guidance-calendar"]/div[2]/div/div[2]/div[33]/button'
         // Click the date input field to open the calendar
         const dateInput = await driver.findElement(By.xpath(dateInputXPath))
         await dateInput.click()
@@ -74,7 +72,7 @@ describe('MQC-21: Medical Consultation Page', () => {
         await desiredDate.click()
         await driver.sleep(5000)  */
 
-        const submitAppointmentXPath = '//*[@id="addMedicalAppointment"]'
+        const submitAppointmentXPath = '//*[@id="addGuidanceAppointment"]'
         await driver.findElement(By.xpath(submitAppointmentXPath)).click()
         await driver.sleep(5000)
 

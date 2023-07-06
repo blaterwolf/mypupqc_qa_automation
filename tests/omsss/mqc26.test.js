@@ -7,6 +7,7 @@ describe('MQC-26: Medical Request History Page', () => {
 
     beforeAll(async () => {
         driver = new Builder().forBrowser('firefox').setFirefoxOptions(firefoxOptions).build()
+        await driver.manage().window().maximize()
     })
 
     afterAll(async () => {
@@ -68,6 +69,21 @@ describe('MQC-26: Medical Request History Page', () => {
         const closeFormXPath ='//*[@id="viewRequestDetails"]/div/div/div[3]/button'
         await driver.findElement(By.xpath(closeFormXPath)).click()
         
+        await driver.sleep(5000)
+    }, 30000)
+
+    test('Should be able to successfully log out of the system', async () => {
+        
+        const dropDownXPath = '//*[@id="full_name"]'
+        await driver.findElement(By.xpath(dropDownXPath)).click()
+        await driver.sleep(5000)
+
+        const logoutXPath = '//*[@id="page-topbar"]/div/div/div[2]/div/div/a[4]/span'
+        await driver.findElement(By.xpath(logoutXPath)).click()
+        await driver.sleep(5000)
+        
+        const confirmLogoutXPath = '/html/body/div[2]/div/div[6]/button[1]'
+        await driver.findElement(By.xpath(confirmLogoutXPath)).click()
         await driver.sleep(5000)
     }, 30000)
 
