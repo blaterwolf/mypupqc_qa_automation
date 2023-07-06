@@ -162,6 +162,10 @@ test ('Should be able to change the status of the announcement to "Published" an
 }, 20000)
 
 test ('Should be able to click the "Edit" button on the existing announcement.', async () => {
+    const myAnnouncementList = '/html/body/div[1]/div[3]/div/div/div[3]/div/div/div[2]/div/ul/li[2]/a'
+
+    await driver.findElement(By.xpath(myAnnouncementList)).click()
+    
     const editButtonXPath = '/html/body/div[1]/div[3]/div/div/div[3]/div/div/div[2]/div/div/div[2]/div/div[3]/div/table/tbody/tr[1]/td[5]/div/button[2]'
 
     await driver.findElement(By.xpath(editButtonXPath)).click()
