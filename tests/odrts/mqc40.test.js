@@ -7,6 +7,7 @@ describe('Login to PUP Staff and Evaluation Page should be functional', () => {
 
     beforeAll(async() => {
         driver = new Builder().forBrowser('firefox').setFirefoxOptions(firefoxOptions).build()
+        await driver.manage().window().maximize()
     })
 
     afterAll(async () => {

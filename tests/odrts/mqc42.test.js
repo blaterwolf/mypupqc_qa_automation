@@ -7,6 +7,7 @@ describe('Login to PUP Staff and Adding Document should be functional', () => {
 
     beforeAll(async() => {
         driver = new Builder().forBrowser('firefox').setFirefoxOptions(firefoxOptions).build()
+        await driver.manage().window().maximize()
     })
 
     afterAll(async () => {
@@ -45,7 +46,7 @@ test ('Should load the documents Page', async () => {
 
 test('Should be able to add document by clicking the "Add Document" button', async () => {
     //note this part is currently not working entirely and I am not able to fully complete the test
-    
+
     const addDocumentXPath = '/html/body/div[1]/div[3]/div/div/div[2]/div/div/div[1]/button';
     const dropdownArrowXPath = '//span[@class="select2-selection__arrow"]';
     const dropdownOptionText = 'Certifications'; // Match the desired option text
