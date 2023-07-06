@@ -2,7 +2,7 @@ const { Builder, By, until } = require('selenium-webdriver')
 const { loginToStaff } = require('../../home/login')
 const firefoxOptions = require('../../helpers/firefoxOptions')
 
-describe('Login to PUP Staff and Requests Page should be functional', () => {
+describe('Login to PUP Staff and History Page should be functional', () => {
     let driver
 
     beforeAll(async() => {
